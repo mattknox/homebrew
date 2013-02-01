@@ -71,6 +71,7 @@ module Homebrew extend self
 
   def info_formula f
     exec 'open', github_info(f) if ARGV.flag? '--github'
+    exec 'open', f.homepage if ARGV.flag? '--homepage'
 
     specs = []
     stable = "stable #{f.stable.version}" if f.stable
